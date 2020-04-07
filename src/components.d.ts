@@ -20,6 +20,8 @@ export namespace Components {
          */
         "middle": string;
     }
+    interface UhDashRadicals {
+    }
 }
 declare global {
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
@@ -28,8 +30,15 @@ declare global {
         prototype: HTMLMyComponentElement;
         new (): HTMLMyComponentElement;
     };
+    interface HTMLUhDashRadicalsElement extends Components.UhDashRadicals, HTMLStencilElement {
+    }
+    var HTMLUhDashRadicalsElement: {
+        prototype: HTMLUhDashRadicalsElement;
+        new (): HTMLUhDashRadicalsElement;
+    };
     interface HTMLElementTagNameMap {
         "my-component": HTMLMyComponentElement;
+        "uh-dash-radicals": HTMLUhDashRadicalsElement;
     }
 }
 declare namespace LocalJSX {
@@ -47,8 +56,11 @@ declare namespace LocalJSX {
          */
         "middle"?: string;
     }
+    interface UhDashRadicals {
+    }
     interface IntrinsicElements {
         "my-component": MyComponent;
+        "uh-dash-radicals": UhDashRadicals;
     }
 }
 export { LocalJSX as JSX };
@@ -56,6 +68,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "uh-dash-radicals": LocalJSX.UhDashRadicals & JSXBase.HTMLAttributes<HTMLUhDashRadicalsElement>;
         }
     }
 }
