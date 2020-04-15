@@ -20,6 +20,13 @@ export namespace Components {
          */
         "middle": string;
     }
+    interface StrokeButton {
+        "stroke": string;
+    }
+    interface UhDash {
+    }
+    interface UhDashCharacters {
+    }
     interface UhDashRadicals {
     }
 }
@@ -30,6 +37,24 @@ declare global {
         prototype: HTMLMyComponentElement;
         new (): HTMLMyComponentElement;
     };
+    interface HTMLStrokeButtonElement extends Components.StrokeButton, HTMLStencilElement {
+    }
+    var HTMLStrokeButtonElement: {
+        prototype: HTMLStrokeButtonElement;
+        new (): HTMLStrokeButtonElement;
+    };
+    interface HTMLUhDashElement extends Components.UhDash, HTMLStencilElement {
+    }
+    var HTMLUhDashElement: {
+        prototype: HTMLUhDashElement;
+        new (): HTMLUhDashElement;
+    };
+    interface HTMLUhDashCharactersElement extends Components.UhDashCharacters, HTMLStencilElement {
+    }
+    var HTMLUhDashCharactersElement: {
+        prototype: HTMLUhDashCharactersElement;
+        new (): HTMLUhDashCharactersElement;
+    };
     interface HTMLUhDashRadicalsElement extends Components.UhDashRadicals, HTMLStencilElement {
     }
     var HTMLUhDashRadicalsElement: {
@@ -38,6 +63,9 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "my-component": HTMLMyComponentElement;
+        "stroke-button": HTMLStrokeButtonElement;
+        "uh-dash": HTMLUhDashElement;
+        "uh-dash-characters": HTMLUhDashCharactersElement;
         "uh-dash-radicals": HTMLUhDashRadicalsElement;
     }
 }
@@ -56,10 +84,22 @@ declare namespace LocalJSX {
          */
         "middle"?: string;
     }
+    interface StrokeButton {
+        "onStrokeClicked"?: (event: CustomEvent<any>) => void;
+        "stroke"?: string;
+    }
+    interface UhDash {
+    }
+    interface UhDashCharacters {
+    }
     interface UhDashRadicals {
+        "onRadSelected"?: (event: CustomEvent<any>) => void;
     }
     interface IntrinsicElements {
         "my-component": MyComponent;
+        "stroke-button": StrokeButton;
+        "uh-dash": UhDash;
+        "uh-dash-characters": UhDashCharacters;
         "uh-dash-radicals": UhDashRadicals;
     }
 }
@@ -68,6 +108,9 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "stroke-button": LocalJSX.StrokeButton & JSXBase.HTMLAttributes<HTMLStrokeButtonElement>;
+            "uh-dash": LocalJSX.UhDash & JSXBase.HTMLAttributes<HTMLUhDashElement>;
+            "uh-dash-characters": LocalJSX.UhDashCharacters & JSXBase.HTMLAttributes<HTMLUhDashCharactersElement>;
             "uh-dash-radicals": LocalJSX.UhDashRadicals & JSXBase.HTMLAttributes<HTMLUhDashRadicalsElement>;
         }
     }

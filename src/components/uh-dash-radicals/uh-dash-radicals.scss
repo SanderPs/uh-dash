@@ -7,7 +7,7 @@
   padding: 1px 2px;
   height: 26px;
   width: 26px;
-  background-color: #151515;
+  background-color:  var(--buttons-color);
   color: #c8c8c8;
 
   font-size: 18px;
@@ -20,11 +20,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
+  cursor: pointer;
 }
 
 .rad-hdr {
-  background-color: #c7c7c7;
+  background-color: #ffffff;
   color: #000;
+  border: 1px solid #b6b6b6;
 }
 
 .radicals-header {
@@ -38,7 +41,7 @@
 .radicals-wrapper {
   border-radius: 10px;
   border: 1px solid #c9c9c9;
-  background-color: #f2f2f2;
+  background-color: #ececec;
   margin: 0 auto;
   padding: 4px;
 
@@ -48,7 +51,7 @@
   flex-wrap: wrap;
 }
 
-.rad-break {
+.rad-break { /* acts as a 'newline' for wrapped elements */
   flex-basis: 100%;
   height: 0;
 }
