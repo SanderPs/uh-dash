@@ -27,7 +27,7 @@ export class UhDashRadicals {
       }
       if (rad.strokeHdr) {
         this.buttons.push(
-          <div key={'hdr-' + radId} class="rad rad-hdr">
+          <div key={'hdr-' + radId} class="rad hdr">
             {rad.strokeHdr}
           </div>
         )

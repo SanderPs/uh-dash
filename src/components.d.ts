@@ -23,6 +23,8 @@ export namespace Components {
     interface StrokeButton {
         "stroke": string;
     }
+    interface StrokeList {
+    }
     interface UhDash {
     }
     interface UhDashCharacters {
@@ -42,6 +44,12 @@ declare global {
     var HTMLStrokeButtonElement: {
         prototype: HTMLStrokeButtonElement;
         new (): HTMLStrokeButtonElement;
+    };
+    interface HTMLStrokeListElement extends Components.StrokeList, HTMLStencilElement {
+    }
+    var HTMLStrokeListElement: {
+        prototype: HTMLStrokeListElement;
+        new (): HTMLStrokeListElement;
     };
     interface HTMLUhDashElement extends Components.UhDash, HTMLStencilElement {
     }
@@ -64,6 +72,7 @@ declare global {
     interface HTMLElementTagNameMap {
         "my-component": HTMLMyComponentElement;
         "stroke-button": HTMLStrokeButtonElement;
+        "stroke-list": HTMLStrokeListElement;
         "uh-dash": HTMLUhDashElement;
         "uh-dash-characters": HTMLUhDashCharactersElement;
         "uh-dash-radicals": HTMLUhDashRadicalsElement;
@@ -88,6 +97,8 @@ declare namespace LocalJSX {
         "onStrokeClicked"?: (event: CustomEvent<any>) => void;
         "stroke"?: string;
     }
+    interface StrokeList {
+    }
     interface UhDash {
     }
     interface UhDashCharacters {
@@ -98,6 +109,7 @@ declare namespace LocalJSX {
     interface IntrinsicElements {
         "my-component": MyComponent;
         "stroke-button": StrokeButton;
+        "stroke-list": StrokeList;
         "uh-dash": UhDash;
         "uh-dash-characters": UhDashCharacters;
         "uh-dash-radicals": UhDashRadicals;
@@ -109,6 +121,7 @@ declare module "@stencil/core" {
         interface IntrinsicElements {
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
             "stroke-button": LocalJSX.StrokeButton & JSXBase.HTMLAttributes<HTMLStrokeButtonElement>;
+            "stroke-list": LocalJSX.StrokeList & JSXBase.HTMLAttributes<HTMLStrokeListElement>;
             "uh-dash": LocalJSX.UhDash & JSXBase.HTMLAttributes<HTMLUhDashElement>;
             "uh-dash-characters": LocalJSX.UhDashCharacters & JSXBase.HTMLAttributes<HTMLUhDashCharactersElement>;
             "uh-dash-radicals": LocalJSX.UhDashRadicals & JSXBase.HTMLAttributes<HTMLUhDashRadicalsElement>;

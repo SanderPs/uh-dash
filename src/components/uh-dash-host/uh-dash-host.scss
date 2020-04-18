@@ -1,15 +1,1 @@
-:root {
-    --buttons-color: #151515;
-    --buttons-inactive-color: #858585;
-    --chinese-font: SimSun;
-    
-    @mixin button-size_1 {
-      height: 24px;
-      width: 24px;
-      font-size: 18px;
-    }
-  } 
-
-.chinese-font {
-  font-family: var(--chinese-font);
-}
+:root { } 

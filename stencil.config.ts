@@ -5,7 +5,9 @@ export const config: Config = {
   namespace: 'uh-dash',
   taskQueue: 'async',
   plugins: [
-    sass()
+    sass({
+      injectGlobalPaths: ["src/global/_app.scss"]
+    })
   ],
   outputTargets: [
     {

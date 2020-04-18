@@ -8,70 +8,62 @@ import { uhCharacters } from './uh-characters';
 export class MyName {
 
   @State() characters: any[] = [];
-  @State() possibleStrokes: any[] = [];
-  @State() showStroke: number | null = null;
+  @State() showStroke: string;
+  @State() showRad: string;
 
   render() {
-    return <div>{this.showStroke}
-      <div class="characters-header"> {this.possibleStrokes}</div>
-      <div class="characters-wrapper">{this.characters}</div>
+    return <div>
+      <div class="characters-header">
+        <stroke-list></stroke-list>
+      </div>
+      <div class="characters-wrapper">
+        {this.characters.map((item) => {
+          return (this.showStroke && (this.showStroke==item[0])) ?
+          [
+            <div key={'charhdr-' + item[0]} class="char hdr">
+              {item[0]}
+            </div>
+          ].concat(
+            this.convertToChar(Object.values(item[1]), item[0])
+          )
+          : '';
+        })}
+      </div>
     </div>
 
   }
 
-
-  @Listen('strokeClicked', {target: 'parent'})
+  @Listen('strokeClicked', {target: 'body'})
   strokeClicked(event: CustomEvent) {
     this.showStroke = event.detail;
+    this.characters = Object.entries(uhCharacters[this.showRad])
   }
 
-  @Listen('radSelected', {target: 'parent'})
-  log(event: CustomEvent) {
+  @Listen('radSelected', { target: 'parent' })
+  radSelected(event: CustomEvent) {
 
-    // show characters:
-      if (event.detail) {
-          this.characters = Object.entries(uhCharacters[event.detail])
-              .map((item) => {
-                  return [
-                  <div key={'charhdr-' + item[0]} class="rad-hdr rad ">
-                      {item[0]}
-                  </div>
-                  ].concat(
-                      this.convertToChar(Object.values(item[1]))
-                  );
-              });
-      }
-      else {
-          this.characters = [];
-      }
-
-      // show available strokes in the header:
-      if (event.detail) {
-        if (uhCharacters[event.detail]) {
-          this.possibleStrokes = Object.keys(uhCharacters[event.detail])
-            .map((k) => { 
-              return <stroke-button key={'stroke-' + k} stroke={k}
-                class={{'activated': this.showStroke?.toString() == k}}
-                ></stroke-button>});
-        }
-        else {
-          console.log('no ', event.detail);
-          this.possibleStrokes = [];
-        }
-      }
+    if (event.detail) {
+      this.characters = Object.entries(uhCharacters[event.detail]);
+      this.showRad = event.detail;
+      this.showStroke = '0';
+    }
+    else {
+      this.characters = [];
+      this.showRad = '';
+      this.showStroke = '';
+    }
   }
 
-  convertToChar(chars: number[]): string[] {
-      console.log('chars: ', chars)
-      return chars ? chars.map(cp => {
-          return <div key={cp} class="rad" onClick={() => this.selectChar(cp)}>
-          {String.fromCharCode(cp)}
-        </div>
-        }) : [];
+  convertToChar(chars: number[], strokes: string): string[] {
+    return chars ? chars.map(cp => {
+      return <div key={cp} class={"char stroke-" + strokes} onClick={() => this.selectChar(cp)}>
+        {String.fromCharCode(cp)}
+      </div>
+    }) : [];
   }
 
   selectChar(cp: number) {
-
+    console.log(cp);
   }
 
 }

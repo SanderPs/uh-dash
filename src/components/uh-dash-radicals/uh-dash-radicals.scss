@@ -1,57 +1,46 @@
 :host {
-  display: block;
   text-align: center;
 }
 
-.rad {
-  padding: 1px 2px;
-  height: 26px;
-  width: 26px;
-  background-color:  var(--buttons-color);
-  color: #c8c8c8;
+uh-dash-radicals {
+  .rad {
+    @include button-look;
+    @include button-size_3;
+    @include button-content;
 
-  font-size: 18px;
-  border-radius: 4px;
-  border: 1px solid #3a3a3a;
-  margin-right: 2px;
-  margin-bottom: 2px;
+    padding: 1px 2px;
 
+    margin-right: 2px;
+    margin-bottom: 2px;
+  }
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  .rad.hdr {
+    background-color: #ffffff;
+    color: #000;
+    border: 1px solid #b6b6b6;
+  }
 
-  cursor: pointer;
-}
+  .radicals-header {
+    border-radius: 10px;
+    border: 1px solid #adadad;
+    background-color: #d1cdcd;
+    margin: 0 auto;
+    padding: 4px;
+  }
 
-.rad-hdr {
-  background-color: #ffffff;
-  color: #000;
-  border: 1px solid #b6b6b6;
-}
+  .radicals-wrapper {
+    @include button-list;
 
-.radicals-header {
-  border-radius: 10px;
-  border: 1px solid #adadad;
-  background-color: #d1cdcd;
-  margin: 0 auto;
-  padding: 4px;
-}
+    border-radius: 10px;
+    border: 1px solid #c9c9c9;
+    background-color: #ececec;
+    margin: 0 auto;
+    padding: 4px;
 
-.radicals-wrapper {
-  border-radius: 10px;
-  border: 1px solid #c9c9c9;
-  background-color: #ececec;
-  margin: 0 auto;
-  padding: 4px;
+  }
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.rad-break { /* acts as a 'newline' for wrapped elements */
-  flex-basis: 100%;
-  height: 0;
+  .rad-break { /* acts as a 'newline' for wrapped elements */
+    flex-basis: 100%;
+    height: 0;
+  }
 }

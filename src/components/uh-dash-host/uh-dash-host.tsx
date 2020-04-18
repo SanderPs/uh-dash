@@ -1,4 +1,5 @@
 import { Component, Host, h } from '@stencil/core';
+//import './../../global/app.scss';
 
 @Component({ 
     tag: 'uh-dash',

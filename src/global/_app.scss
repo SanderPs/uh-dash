@@ -1,0 +1,52 @@
+$buttons-color: #151515;
+$buttons-inactive-color: #858585;
+
+@mixin button-look {
+  color: #c8c8c8;
+  border-radius: 4px;
+  border: 1px solid #3a3a3a;
+  background-color: $buttons-color;
+  cursor: pointer;
+}
+
+@mixin button-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin button-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+@mixin button-size_1 {
+  height: 24px;
+  width: 24px;
+  font-size: 18px;
+}
+
+@mixin button-size_2 {
+  height: 46px;
+  width: 46px;
+  font-size: 38px;
+}
+
+@mixin button-size_3 {
+  height: 28px;
+  width: 28px;
+  font-size: 22px;
+}
+
+:root {
+  // --app-primary-color: #488aff;
+}
+
+
+//   --chinese-font: SimSun;
+
+//   .chinese-font {
+//     font-family: var(--chinese-font);
+//   }

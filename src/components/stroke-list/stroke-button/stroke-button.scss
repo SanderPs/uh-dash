@@ -1,0 +1,20 @@
+:host {
+  text-align: center;
+}
+
+stroke-button {
+  @include button-look;
+  @include button-size_1;
+  @include button-content;
+
+  padding: 1px 2px;
+
+  margin-right: 2px;
+  margin-bottom: 2px;
+
+  background-color: $buttons-inactive-color;
+
+  &.activated {
+    background-color: $buttons-color !important;
+  }
+}
