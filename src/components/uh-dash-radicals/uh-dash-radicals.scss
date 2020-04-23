@@ -21,6 +21,9 @@ uh-dash-radicals {
   }
 
   .radicals-header {
+    @include button-list;
+    
+    text-align: center;
     border-radius: 10px;
     border: 1px solid #adadad;
     background-color: #d1cdcd;
