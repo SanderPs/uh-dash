@@ -1,8 +1,17 @@
 
+## How to run
+
+```
+> npm install
+> npm run start
+```
+
 ## Issues
 
 - wijzigingen in `/global/app.scss` worden bij save niet geupdate: https://github.com/ionic-team/stencil-sass/issues/8
 
+
+# From the documentation:
 
 ## Using this component
 
