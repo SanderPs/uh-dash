@@ -1,5 +1,6 @@
 import { Component, Event, EventEmitter, State, h } from '@stencil/core';
 import { uhRadicals, IUnihanRadicals } from './uh-radicals';
+import { utf16 } from './../../utils/utils';
 
 @Component({
   tag: 'uh-dash-radicals',
@@ -25,15 +26,15 @@ export class UhDashRadicals {
 
     if (this.selectedRadical) {
       this.selectedButton = <div class="rad" onClick={() => this.unselectRad()}>
-          {String.fromCharCode(this.theList[this.selectedRadical].trCJK)}
+          {utf16(this.theList[this.selectedRadical].trCJK)}
         </div>;
 
     } else {
       this.selectedButton = '';
       for (const [radId, rad] of Object.entries(this.theList)) {
-        if (rad.newline) {
-          this.buttons.push(<div class="rad-break"></div>)
-        }
+        // if (rad.newline) {
+        //   this.buttons.push(<div class="rad-break"></div>)
+        // }
         if (rad.strokeHdr) {
           this.buttons.push(
             <div key={'hdr-' + radId} class="rad hdr">
@@ -43,7 +44,7 @@ export class UhDashRadicals {
         }
         this.buttons.push(
           <div key={radId} title={radId.slice(0, -1)} class="rad" onClick={() => this.selectRad(parseInt(radId, 10))}>
-            {String.fromCharCode(rad.trCJK)}
+            {utf16(rad.trCJK)}
           </div>
         )
       }

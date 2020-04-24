@@ -1,5 +1,6 @@
-import { Component, Listen, h, State } from '@stencil/core';
+import { Component, Listen, Event, EventEmitter, State, h } from '@stencil/core';
 import { uhCharacters } from './uh-characters';
+import { utf16 } from './../../utils/utils';
 
 @Component({
   tag: 'uh-dash-characters',
@@ -10,6 +11,8 @@ export class MyName {
   @State() characters: any[] = [];
   @State() showStroke: string;
   @State() showRad: string;
+
+  @Event() onCharSelected: EventEmitter;
 
   render() {
     return <div>
@@ -57,13 +60,13 @@ export class MyName {
   convertToChar(chars: number[], strokes: string): string[] {
     return chars ? chars.map(cp => {
       return <div key={cp} class={"char stroke-" + strokes} onClick={() => this.selectChar(cp)}>
-        {String.fromCharCode(cp)}
+        {utf16(cp)}
       </div>
     }) : [];
   }
 
   selectChar(cp: number) {
-    console.log(cp);
+    this.onCharSelected.emit(cp);
   }
 
 }
