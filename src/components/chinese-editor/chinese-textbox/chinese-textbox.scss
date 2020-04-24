@@ -1,0 +1,24 @@
+
+chinese-textbox {
+    // @include flex-list;
+    display: inline-block;
+    width: fit-content;
+    border: 1px solid rgb(129, 129, 129);
+    border-radius: 4px;
+    background-color: #fff;
+    padding: 3px 5px;
+
+    min-height: 46px; // todo: deze zijn eigenlijk grote van mixin button-size_2
+    min-width: 46px * 4;
+    max-width: 80vw;
+
+    & div {
+
+        @include button-size_2;
+        @include flex-item;
+      
+        display: inline-block;
+        vertical-align: middle;
+    }
+}
+

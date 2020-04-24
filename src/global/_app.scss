@@ -1,21 +1,21 @@
-$buttons-color: #151515;
+$buttons-color: #303030;
 $buttons-inactive-color: #858585;
 
 @mixin button-look {
   color: #c8c8c8;
   border-radius: 4px;
-  border: 1px solid #3a3a3a;
+  border: 1px solid #000;
   background-color: $buttons-color;
   cursor: pointer;
 }
 
-@mixin button-content {
+@mixin flex-item {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-@mixin button-list {
+@mixin flex-list {
   display: flex;
   align-items: center;
   justify-content: center;

@@ -6,7 +6,7 @@ uh-dash-radicals {
   .rad {
     @include button-look;
     @include button-size_3;
-    @include button-content;
+    @include flex-item;
 
     padding: 1px 2px;
 
@@ -18,25 +18,26 @@ uh-dash-radicals {
     background-color: #ffffff;
     color: #000;
     border: 1px solid #b6b6b6;
+    font-size: 1.2rem;
   }
 
   .radicals-header {
-    @include button-list;
+    @include flex-list;
     
     text-align: center;
     border-radius: 10px;
-    border: 1px solid #adadad;
-    background-color: #d1cdcd;
+    border: 2px solid #000;
+    background-color: rgba($color: #dcdcdc, $alpha: 0.5);
     margin: 0 auto;
     padding: 4px;
   }
 
   .radicals-wrapper {
-    @include button-list;
+    @include flex-list;
 
     border-radius: 10px;
-    border: 1px solid #c9c9c9;
-    background-color: #ececec;
+    border: 2px solid #000;
+    background-color: rgba($color: #ececec, $alpha: 0.3);
     margin: 0 auto;
     padding: 4px;
 

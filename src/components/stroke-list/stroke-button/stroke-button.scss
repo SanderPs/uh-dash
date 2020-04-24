@@ -5,7 +5,9 @@
 stroke-button {
   @include button-look;
   @include button-size_1;
-  @include button-content;
+  @include flex-item;
+
+  font-size: 15px !important; // todo: yug
 
   padding: 1px 2px;
 

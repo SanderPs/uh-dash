@@ -1,1 +1,23 @@
-:root { } 
+uh-dash { 
+    background: rgb(96,96,96);
+    background: radial-gradient(circle, rgba(96,96,96,1) 0%, rgba(0,0,0,1) 78%);
+    padding: 7px;
+    // display: block;
+    position:fixed;
+    bottom:0;
+
+    font-family: sans-serif;
+
+    border-top-right-radius: 12px;
+    border-top-left-radius: 12px;
+
+    right: 0;
+    left: 0;
+    margin-right: auto;
+    margin-left: auto;
+
+    left: 10vw;
+    right: 10vw;
+    
+    z-index: 10000; 
+} 

@@ -1,0 +1,9 @@
+backspace-key {
+    @include button-size_2;
+    @include flex-item;
+ 
+    display: inline-block;
+    vertical-align: middle;
+    background-color: #000;
+    padding: 2px 3px;
+}

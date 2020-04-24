@@ -9,6 +9,7 @@ export class UhDash {
     render() {
         return (
             <Host>
+                <chinese-editor></chinese-editor>
                 <uh-dash-characters></uh-dash-characters>
                 <uh-dash-radicals></uh-dash-radicals>
             </Host>

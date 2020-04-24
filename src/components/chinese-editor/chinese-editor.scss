@@ -1,0 +1,13 @@
+
+chinese-editor {
+    display: block;
+
+    text-align: center;
+    border-radius: 10px;
+    border: 2px solid #000;
+    background-color: rgba($color: #dcdcdc, $alpha: 0.5);
+    margin: 0 auto;
+    padding: 4px;
+
+    @include flex-list;
+}
