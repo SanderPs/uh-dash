@@ -25,6 +25,6 @@ export class ChineseTextbox {
 
     @Listen('backspaceClicked', {target: 'body'})
     backspaceClicked() {
-        this.text = this.text.slice(0,-1)
+        this.text = this.text.slice(0,-1); // todo: this should not work? change detection and array reference
     }
 }

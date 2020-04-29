@@ -6,7 +6,7 @@ import { utf16 } from './../../utils/utils';
   tag: 'uh-dash-radicals',
   styleUrl: 'uh-dash-radicals.scss'
 })
-export class UhDashRadicals {
+export class Radicals {
 
   buttons = [];
   selectedButton: string;

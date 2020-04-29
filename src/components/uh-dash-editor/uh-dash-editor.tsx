@@ -1,10 +1,10 @@
 import { Component, Host, h } from '@stencil/core';
 
 @Component({
-    tag: 'chinese-editor',
-    styleUrl: 'chinese-editor.scss'
+    tag: 'uh-dash-editor',
+    styleUrl: 'uh-dash-editor.scss'
 })
-export class ChineseEditor {
+export class Editor {
     
     render() {
         return <Host>

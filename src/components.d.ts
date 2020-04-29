@@ -8,23 +8,7 @@ import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface BackspaceKey {
     }
-    interface ChineseEditor {
-    }
     interface ChineseTextbox {
-    }
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first": string;
-        /**
-          * The last name
-         */
-        "last": string;
-        /**
-          * The middle name
-         */
-        "middle": string;
     }
     interface StrokeButton {
         "stroke": string;
@@ -34,6 +18,8 @@ export namespace Components {
     interface UhDash {
     }
     interface UhDashCharacters {
+    }
+    interface UhDashEditor {
     }
     interface UhDashRadicals {
     }
@@ -45,23 +31,11 @@ declare global {
         prototype: HTMLBackspaceKeyElement;
         new (): HTMLBackspaceKeyElement;
     };
-    interface HTMLChineseEditorElement extends Components.ChineseEditor, HTMLStencilElement {
-    }
-    var HTMLChineseEditorElement: {
-        prototype: HTMLChineseEditorElement;
-        new (): HTMLChineseEditorElement;
-    };
     interface HTMLChineseTextboxElement extends Components.ChineseTextbox, HTMLStencilElement {
     }
     var HTMLChineseTextboxElement: {
         prototype: HTMLChineseTextboxElement;
         new (): HTMLChineseTextboxElement;
-    };
-    interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
-    }
-    var HTMLMyComponentElement: {
-        prototype: HTMLMyComponentElement;
-        new (): HTMLMyComponentElement;
     };
     interface HTMLStrokeButtonElement extends Components.StrokeButton, HTMLStencilElement {
     }
@@ -87,6 +61,12 @@ declare global {
         prototype: HTMLUhDashCharactersElement;
         new (): HTMLUhDashCharactersElement;
     };
+    interface HTMLUhDashEditorElement extends Components.UhDashEditor, HTMLStencilElement {
+    }
+    var HTMLUhDashEditorElement: {
+        prototype: HTMLUhDashEditorElement;
+        new (): HTMLUhDashEditorElement;
+    };
     interface HTMLUhDashRadicalsElement extends Components.UhDashRadicals, HTMLStencilElement {
     }
     var HTMLUhDashRadicalsElement: {
@@ -95,13 +75,12 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "backspace-key": HTMLBackspaceKeyElement;
-        "chinese-editor": HTMLChineseEditorElement;
         "chinese-textbox": HTMLChineseTextboxElement;
-        "my-component": HTMLMyComponentElement;
         "stroke-button": HTMLStrokeButtonElement;
         "stroke-list": HTMLStrokeListElement;
         "uh-dash": HTMLUhDashElement;
         "uh-dash-characters": HTMLUhDashCharactersElement;
+        "uh-dash-editor": HTMLUhDashEditorElement;
         "uh-dash-radicals": HTMLUhDashRadicalsElement;
     }
 }
@@ -109,23 +88,7 @@ declare namespace LocalJSX {
     interface BackspaceKey {
         "onBackspaceClicked"?: (event: CustomEvent<any>) => void;
     }
-    interface ChineseEditor {
-    }
     interface ChineseTextbox {
-    }
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first"?: string;
-        /**
-          * The last name
-         */
-        "last"?: string;
-        /**
-          * The middle name
-         */
-        "middle"?: string;
     }
     interface StrokeButton {
         "onStrokeClicked"?: (event: CustomEvent<any>) => void;
@@ -138,18 +101,19 @@ declare namespace LocalJSX {
     interface UhDashCharacters {
         "onOnCharSelected"?: (event: CustomEvent<any>) => void;
     }
+    interface UhDashEditor {
+    }
     interface UhDashRadicals {
         "onRadSelected"?: (event: CustomEvent<any>) => void;
     }
     interface IntrinsicElements {
         "backspace-key": BackspaceKey;
-        "chinese-editor": ChineseEditor;
         "chinese-textbox": ChineseTextbox;
-        "my-component": MyComponent;
         "stroke-button": StrokeButton;
         "stroke-list": StrokeList;
         "uh-dash": UhDash;
         "uh-dash-characters": UhDashCharacters;
+        "uh-dash-editor": UhDashEditor;
         "uh-dash-radicals": UhDashRadicals;
     }
 }
@@ -158,13 +122,12 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "backspace-key": LocalJSX.BackspaceKey & JSXBase.HTMLAttributes<HTMLBackspaceKeyElement>;
-            "chinese-editor": LocalJSX.ChineseEditor & JSXBase.HTMLAttributes<HTMLChineseEditorElement>;
             "chinese-textbox": LocalJSX.ChineseTextbox & JSXBase.HTMLAttributes<HTMLChineseTextboxElement>;
-            "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
             "stroke-button": LocalJSX.StrokeButton & JSXBase.HTMLAttributes<HTMLStrokeButtonElement>;
             "stroke-list": LocalJSX.StrokeList & JSXBase.HTMLAttributes<HTMLStrokeListElement>;
             "uh-dash": LocalJSX.UhDash & JSXBase.HTMLAttributes<HTMLUhDashElement>;
             "uh-dash-characters": LocalJSX.UhDashCharacters & JSXBase.HTMLAttributes<HTMLUhDashCharactersElement>;
+            "uh-dash-editor": LocalJSX.UhDashEditor & JSXBase.HTMLAttributes<HTMLUhDashEditorElement>;
             "uh-dash-radicals": LocalJSX.UhDashRadicals & JSXBase.HTMLAttributes<HTMLUhDashRadicalsElement>;
         }
     }
