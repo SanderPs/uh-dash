@@ -6,10 +6,16 @@
 > npm run start
 ```
 
-## Issues
+## Main Issues
+
+- change inter component communication from events to RxJS
+- components should not directly read the arrays, they should get their data from a service
+- should become a input box with a pop-up keyboard
+- for use on mobile phones: css should be somewhat different, list of radicals should be collapsable
+
+## Other Issues
 
 - wijzigingen in `/global/app.scss` worden bij save niet geupdate: https://github.com/ionic-team/stencil-sass/issues/8
-
 
 # From the documentation:
 
